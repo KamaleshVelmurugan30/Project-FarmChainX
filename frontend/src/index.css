@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* FarmChainX - Earthy Agricultural Theme */
+    --background: 85 25% 97%;
+    --foreground: 140 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 140 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 30% 12%;
+
+    /* Deep Forest Green - Primary */
+    --primary: 142 45% 28%;
+    --primary-foreground: 85 25% 97%;
+
+    /* Warm Earth Brown - Secondary */
+    --secondary: 32 35% 85%;
+    --secondary-foreground: 32 45% 25%;
+
+    /* Soft Sage - Muted */
+    --muted: 90 20% 92%;
+    --muted-foreground: 140 15% 45%;
+
+    /* Fresh Leaf Green - Accent */
+    --accent: 142 60% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Alert Red */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 90 20% 88%;
+    --input: 90 20% 88%;
+    --ring: 142 45% 28%;
+
+    --radius: 0.75rem;
+
+    /* Custom FarmChainX Colors */
+    --farm-green: 142 45% 28%;
+    --farm-green-light: 142 40% 92%;
+    --farm-green-dark: 142 50% 18%;
+    --earth-brown: 32 45% 35%;
+    --earth-brown-light: 32 35% 90%;
+    --harvest-gold: 45 85% 55%;
+    --harvest-gold-light: 45 80% 92%;
+    --sky-blue: 200 75% 55%;
+    --sky-blue-light: 200 70% 92%;
+    --soil-dark: 25 30% 18%;
+    --success: 142 60% 45%;
+    --warning: 38 92% 50%;
+    --info: 200 75% 55%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 45% 28%) 0%, hsl(142 40% 35%) 50%, hsl(90 30% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(90 20% 98%) 100%);
+    --gradient-nature: linear-gradient(135deg, hsl(142 45% 28%) 0%, hsl(90 40% 35%) 100%);
+    --gradient-earth: linear-gradient(135deg, hsl(32 45% 35%) 0%, hsl(25 40% 25%) 100%);
+    --gradient-golden: linear-gradient(135deg, hsl(45 85% 55%) 0%, hsl(38 75% 45%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(140 30% 12% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(140 30% 12% / 0.1), 0 2px 4px -2px hsl(140 30% 12% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(140 30% 12% / 0.1), 0 4px 6px -4px hsl(140 30% 12% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(140 30% 12% / 0.1), 0 8px 10px -6px hsl(140 30% 12% / 0.1);
+    --shadow-glow: 0 0 40px hsl(142 60% 45% / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 142 45% 28%;
+    --sidebar-foreground: 85 25% 97%;
+    --sidebar-primary: 85 25% 97%;
+    --sidebar-primary-foreground: 142 45% 28%;
+    --sidebar-accent: 142 40% 35%;
+    --sidebar-accent-foreground: 85 25% 97%;
+    --sidebar-border: 142 40% 22%;
+    --sidebar-ring: 142 60% 45%;
+  }
+
+  .dark {
+    --background: 140 25% 8%;
+    --foreground: 85 20% 95%;
+
+    --card: 140 20% 12%;
+    --card-foreground: 85 20% 95%;
+
+    --popover: 140 20% 12%;
+    --popover-foreground: 85 20% 95%;
+
+    --primary: 142 55% 50%;
+    --primary-foreground: 140 25% 8%;
+
+    --secondary: 32 25% 20%;
+    --secondary-foreground: 32 25% 85%;
+
+    --muted: 140 15% 18%;
+    --muted-foreground: 90 15% 60%;
+
+    --accent: 142 60% 55%;
+    --accent-foreground: 140 25% 8%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 15% 20%;
+    --input: 140 15% 20%;
+    --ring: 142 55% 50%;
+
+    --farm-green: 142 55% 50%;
+    --farm-green-light: 142 40% 15%;
+    --farm-green-dark: 142 50% 35%;
+    --earth-brown: 32 35% 45%;
+    --earth-brown-light: 32 25% 18%;
+
+    --sidebar-background: 140 25% 8%;
+    --sidebar-foreground: 85 20% 95%;
+    --sidebar-primary: 142 55% 50%;
+    --sidebar-primary-foreground: 140 25% 8%;
+    --sidebar-accent: 140 20% 15%;
+    --sidebar-accent-foreground: 85 20% 95%;
+    --sidebar-border: 140 15% 18%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-nature {
+    background: var(--gradient-nature);
+  }
+
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+
+  .gradient-golden {
+    background: var(--gradient-golden);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glass {
+    @apply bg-card/80 backdrop-blur-md;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background: var(--gradient-nature);
+  }
+}
+
+/* Leaflet Map Fixes */
+.leaflet-container {
+  @apply rounded-lg z-0;
+  font-family: 'Outfit', system-ui, sans-serif;
+}
+
+.leaflet-control-attribution {
+  @apply text-xs opacity-60;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(142 60% 45% / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(142 60% 45% / 0.5); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.3s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
