@@ -347,7 +347,7 @@ export default function DashboardPage() {
   // 🔗 Backend connection (Spring Boot)
   useEffect(() => {
     api
-      .get("/hello")
+      .get("/api/hello")
       .then((res) => setBackendMsg(res.data))
       .catch((err) => console.error("Backend error:", err));
   }, []);
